@@ -5,6 +5,8 @@ from webdriver.Webdriver import Driver
 
 
 class CalculadoraTestes(unittest.TestCase):
+
+    @classmethod
     def setUp(self):
         self.driver = Driver()
 
@@ -24,8 +26,9 @@ class CalculadoraTestes(unittest.TestCase):
         calculadora = Calculator(self.driver)
         calculadora.dividindo(8, 4)
 
+    @classmethod
     def tearDown(self):
         self.driver.instance.quit()
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HTMLTestRunner(output='resultados dos meus testes'))
+    unittest.main(testRunner=HTMLTestRunner(output='..\\reports'))
